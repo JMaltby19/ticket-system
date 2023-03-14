@@ -51,7 +51,7 @@ export const Register = () => {
 
 	return (
 		<div className="flex flex-col justify-center items-center mt-44">
-			<div className=" rounded-lg w-2/6 bg-slate-400 ">
+			<div className=" rounded-lg w-2/6 bg-slate-200 ">
 				<section>
 					<h1 className="flex flex-row justify-center items-center gap-2">
 						<FaUser />

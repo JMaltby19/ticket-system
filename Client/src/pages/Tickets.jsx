@@ -17,7 +17,7 @@ export const Tickets = () => {
 	}, [dispatch]);
 
 	return (
-		<div className="grid gap-4 h-4/6 bg-slate-200 rounded-lg p-2">
+		<div className="grid gap-4 h-4/6 bg-slate-200 rounded-lg p-3">
 			<PreviousButton url={"/"} />
 			<h1 className="text-slate-800">Tickets</h1>
 			<div>

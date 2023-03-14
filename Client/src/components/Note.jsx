@@ -12,7 +12,7 @@ export const Note = ({ note }) => {
 					Posted by {user.payload[0].user_name} on{" "}
 					{new Date(note.note_added_date).toLocaleString("en-UK")}
 				</h4>
-				<div className=" text-2xl">{note.note}</div>
+				<p className=" text-2xl">{note.note}</p>
 				{/* <div className="">
 					{new Date(note.note_added_date).toLocaleString("en-UK")}
 				</div> */}

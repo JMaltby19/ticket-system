@@ -15,7 +15,7 @@ export const Navbar = () => {
 	};
 
 	return (
-		<heade className=" w-full h-20 flex flex-row justify-between my-0">
+		<header className=" w-full h-20 flex flex-row justify-between my-0">
 			<h1 className=" text-2xl text-slate-100">
 				<Link to="/">Ticket System</Link>
 			</h1>
@@ -41,18 +41,18 @@ export const Navbar = () => {
 						<li>
 							<Link to={"/login"} className="flex flex-row gap-2">
 								<FaSignInAlt size={20} className="my-2" />
-								<h3>Login</h3>
+								<h3 className="text-slate-100">Login</h3>
 							</Link>
 						</li>
 						<li>
 							<Link to={"/register"} className="flex flex-row gap-2">
 								<FaUser size={20} className="my-2" />
-								<h3>Register</h3>
+								<h3 className="text-slate-100">Register</h3>
 							</Link>
 						</li>
 					</>
 				)}
 			</ul>
-		</heade>
+		</header>
 	);
 };

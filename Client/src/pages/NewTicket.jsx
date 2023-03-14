@@ -28,53 +28,63 @@ export const NewTicket = () => {
 	};
 
 	return (
-		<div>
-      <div className=" rounded-lg w-2/6 bg-slate-400">
-			<PreviousButton url={"/"} />
-			<section>
-				<h1>Create a new Ticket</h1>
-				<p>Please fill in the form below to create you ticket</p>
-			</section>
-			<section className="flex flex-col gap-4">
-				<div>
-					<label htmlFor="name">Customer Name:</label>
-					<span> {user_name}</span>
-				</div>
-				<div>
-					<label htmlFor="name">Customer Email:</label>
-					<span> {email}</span>
-				</div>
-				<form className="flex flex-col gap-8" onSubmit={onSubmit}>
-					<div className=" flex flex-row justify-center items-center px-8 gap-4">
-						<label htmlFor="product">Product</label>
-						<input
-							type="text"
-							name="product"
-							id="product"
-							onChange={(e) => setProduct(e.target.value)}
-						/>
+		<div className="flex flex-col justify-center items-center mt-20">
+			<div className=" rounded-lg w-4/6 bg-slate-200 p-2">
+				<PreviousButton url={"/"} />
+				<section>
+					<h1>Create a new Ticket</h1>
+					<p>Please fill in the form below to create you ticket</p>
+				</section>
+				<section className="flex flex-col gap-4">
+					<div>
+						<label className="text-slate-800" htmlFor="name">
+							Customer Name:
+						</label>
+						<span className="text-slate-800"> {user_name}</span>
 					</div>
-					<div className=" flex flex-row justify-center items-center gap-4">
-						<label htmlFor="description">Description</label>
-						{/* <input
+					<div>
+						<label className="text-slate-800" htmlFor="name">
+							Customer Email:
+						</label>
+						<span className="text-slate-800"> {email}</span>
+					</div>
+					<form className="flex flex-col gap-8" onSubmit={onSubmit}>
+						<div className=" flex flex-row justify-center items-center px-8 gap-4">
+							<label className="text-slate-800" htmlFor="product">
+								Product
+							</label>
+							<input
+								type="text"
+								name="product"
+								id="product"
+								onChange={(e) => setProduct(e.target.value)}
+							/>
+						</div>
+						<div className=" flex flex-row justify-center items-center gap-4">
+							<label className="text-slate-800" htmlFor="description">
+								Description
+							</label>
+							{/* <input
 							type="text"
 							name="description"
 							id="description"
 							onChange={(e) => setDescription(e.target.value)}
 						/> */}
-						<textarea
-							name="text"
-							id="text"
-							className=" relative h-20 flex justify-center items-center text-center rounded-md"
-							onChange={(e) => setDescription(e.target.value)}
-						></textarea>
-					</div>
-					<div>
-						<button>Submit</button>
-					</div>
-				</form>
-			</section>
-      </div>
+							<textarea
+								name="text"
+								id="text"
+								className=" relative h-20 flex justify-center items-center text-center rounded-md"
+								onChange={(e) => setDescription(e.target.value)}
+							></textarea>
+						</div>
+						<div>
+							<button className=" bg-blue-800 p-3 rounded-lg hover:bg-blue-900">
+								Submit
+							</button>
+						</div>
+					</form>
+				</section>
+			</div>
 		</div>
 	);
 };
