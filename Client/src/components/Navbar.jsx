@@ -25,7 +25,7 @@ export const Navbar = () => {
 						<li>
 							{" "}
 							<h3 className="text-slate-100">
-								Hello {user.payload[0].user_name}
+								Hello {user.payload.user_name || user.payload[0].user_name}
 							</h3>
 						</li>
 						<li>

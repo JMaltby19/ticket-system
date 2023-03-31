@@ -8,7 +8,7 @@ import { createTicket } from "../features/tickets/ticketSlice";
 export const NewTicket = () => {
 	const { user } = useSelector((state) => state.auth);
 
-	const { user_name, email } = user.payload[0];
+	const { user_name, email } = user.payload;
 
 	const [product, setProduct] = useState("");
 	const [description, setDescription] = useState("");

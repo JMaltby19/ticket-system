@@ -11,7 +11,7 @@ import { FaPlus } from "react-icons/fa";
 
 export const TicketId = () => {
 	const [modalOpen, setModalOpen] = useState(false);
-	const [note, setNote] = useState("");
+	const [note, setNote] = useState([]);
 
 	const { ticket } = useSelector((state) => state.tickets);
 	const { notes } = useSelector((state) => state.note);
@@ -61,20 +61,12 @@ export const TicketId = () => {
 			.catch(toast.error);
 	};
 
-	const noteSubmit = async (e) => {
+	const noteSubmit = (e) => {
 		e.preventDefault();
-		try {
-			await Promise.resolve();
-			const response = dispatch(createNote({ ticketId, note }));
-			console.log(response);
-			window.location.reload();
-			// return;
-			setNote("");
-			closeModal();
-			return response;
-		} catch (error) {
-			toast.error(error);
-		}
+		dispatch(createNote({ ticketId, note }));
+		dispatch(getNotes(ticketId)).unwrap().catch(toast.error);
+		closeModal();
+		navigate(`/tickets/${ticketId}`);
 	};
 
 	return (
@@ -90,7 +82,9 @@ export const TicketId = () => {
 							</h6>
 							<h6>
 								Name:{" "}
-								<span className="font-normal">{user.payload[0].user_name}</span>
+								<span className="font-normal">
+									{user.payload.user_name || user.payload[0].user_name}
+								</span>
 							</h6>
 							<h6>
 								Date Submitted:{" "}
@@ -143,10 +137,10 @@ export const TicketId = () => {
 								</div>
 								<div className="flex flex-row justify-evenly my-2 ">
 									<div className=" bg-slate-900 rounded-md px-2">
-										Name: {user.payload[0].user_name}
+										Name: {user.payload.user_name || user.payload[0].user_name}
 									</div>
 									<div className=" bg-slate-900 rounded-md px-2">
-										email: {user.payload[0].email}
+										email: {user.payload.email || user.payload[0].email}
 									</div>
 								</div>
 								<div className="flex justify-center items-center mt-3">

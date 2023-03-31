@@ -21,8 +21,8 @@ export const Home = () => {
 				to={"/tickets"}
 				className="flex flex-row justify-center items-center gap-4 bg-slate-400 ring-offset-2 ring-2 px-4 py-4 rounded-lg w-96 hover:bg-slate-600"
 			>
-				<FaTicketAlt className="mt-2 text-slate-200" />
-				<h3 className=" text-slate-200"> View my tickets</h3>
+				<FaTicketAlt className="mt-2 text-slate-800" />
+				<h3 className=" text-slate-800"> View my tickets</h3>
 			</Link>
 		</div>
 	);

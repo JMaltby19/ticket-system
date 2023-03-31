@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8001/api/tickets";
+// const API_URL = "http://localhost:8001/api/tickets";
+const API_URL = "https://ticket-system-backend-alpha.vercel.app/api/tickets";
 
 const getNotes = async (id) => {
 	const response = await axios.get(`${API_URL}/${id}/notes`, {
