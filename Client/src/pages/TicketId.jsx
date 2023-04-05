@@ -72,8 +72,8 @@ export const TicketId = () => {
 	return (
 		<div className=" max-w-screen-2xl">
 			{ticket && (
-				<div className=" bg-slate-200 rounded-lg p-2">
-					<div className="grid grid-rows-2 grid-flow-col gap-4 min-h-screen bg-slate-200 rounded-lg p-4">
+				<div className=" bg-slate-200 rounded-lg p-2 mt-24">
+					<div className="grid grid-rows-2 grid-flow-col gap-4 min-h-screen bg-slate-200 rounded-lg p-2">
 						<header className="grid row-span-2 divide-y divide-slate-700 ">
 							<PreviousButton url={"/tickets"} />
 							<h6>

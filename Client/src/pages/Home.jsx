@@ -12,14 +12,14 @@ export const Home = () => {
 
 			<Link
 				to={"/new-ticket"}
-				className="flex flex-row justify-center items-center gap-4 bg-slate-400 ring-offset-2 ring-2 outline-offset-2 px-4 py-4 rounded-lg w-96 hover:bg-slate-600"
+				className="flex flex-row justify-center items-center gap-4 bg-slate-200 ring-offset-2 ring-2 outline-offset-2 px-4 py-4 rounded-lg w-96 hover:bg-slate-400"
 			>
 				<FaQuestionCircle className="mt-2 text-slate-800" />
 				<h3 className=" text-slate-800">Create new ticket</h3>
 			</Link>
 			<Link
 				to={"/tickets"}
-				className="flex flex-row justify-center items-center gap-4 bg-slate-400 ring-offset-2 ring-2 px-4 py-4 rounded-lg w-96 hover:bg-slate-600"
+				className="flex flex-row justify-center items-center gap-4 bg-slate-200 ring-offset-2 ring-2 px-4 py-4 rounded-lg w-96 hover:bg-slate-400"
 			>
 				<FaTicketAlt className="mt-2 text-slate-800" />
 				<h3 className=" text-slate-800"> View my tickets</h3>

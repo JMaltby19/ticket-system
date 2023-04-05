@@ -1,7 +1,7 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { Login } from "./pages/Login";
 import { Register } from "./pages/Register";
@@ -15,9 +15,10 @@ import { TicketId } from "./pages/TicketId";
 
 function App() {
 	return (
-		<div>
-			<Router>
-				<Navbar />
+		<>
+			<Navbar />
+			<section>
+				{/* <Router> */}
 				<div>
 					<Routes>
 						<Route path="/login" element={<Login />} />
@@ -56,9 +57,10 @@ function App() {
 						></Route>
 					</Routes>
 				</div>
-			</Router>
+				{/* </Router> */}
+			</section>
 			<ToastContainer />
-		</div>
+		</>
 	);
 }
 

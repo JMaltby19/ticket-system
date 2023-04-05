@@ -44,7 +44,7 @@ export const Login = () => {
 
 	return (
 		<div className="flex flex-col justify-center items-center mt-44">
-			<div className=" rounded-lg w-2/6 bg-slate-200 ">
+			<div className=" rounded-lg w-3/6 bg-slate-200 ">
 				<section>
 					<h1 className="flex flex-row justify-center items-center gap-2 text-slate-800">
 						<FaSignInAlt />
@@ -56,6 +56,7 @@ export const Login = () => {
 					<form onSubmit={onSubmit} className="flex flex-col gap-6">
 						<div>
 							<input
+								className=" w-4/5"
 								type="text"
 								name="email"
 								value={email}
@@ -66,6 +67,7 @@ export const Login = () => {
 						</div>
 						<div>
 							<input
+								className="w-4/5"
 								type="password"
 								name="password"
 								value={password}

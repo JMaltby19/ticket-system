@@ -51,7 +51,7 @@ export const Register = () => {
 
 	return (
 		<div className="flex flex-col justify-center items-center mt-44">
-			<div className=" rounded-lg w-2/6 bg-slate-200 ">
+			<div className=" rounded-lg w-3/6 bg-slate-200 ">
 				<section>
 					<h1 className="flex flex-row justify-center items-center gap-2">
 						<FaUser />
@@ -63,6 +63,7 @@ export const Register = () => {
 					<form onSubmit={onSubmit} className="flex flex-col gap-6">
 						<div>
 							<input
+								className="w-4/5"
 								type="text"
 								name="user_name"
 								value={user_name}
@@ -73,6 +74,7 @@ export const Register = () => {
 						</div>
 						<div>
 							<input
+								className="w-4/5"
 								type="text"
 								name="email"
 								value={email}
@@ -83,6 +85,7 @@ export const Register = () => {
 						</div>
 						<div>
 							<input
+								className="w-4/5"
 								type="password"
 								name="password"
 								value={password}
@@ -93,6 +96,7 @@ export const Register = () => {
 						</div>
 						<div>
 							<input
+								className="w-4/5"
 								type="password"
 								name="confirmPassword"
 								value={confirmPassword}
