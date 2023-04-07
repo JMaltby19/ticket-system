@@ -29,7 +29,7 @@ export const NewTicket = () => {
 
 	return (
 		<div className="flex flex-col justify-center items-center mt-20">
-			<div className=" rounded-lg w-4/6 bg-slate-200 p-2">
+			<div className=" rounded-lg w-5/6 md:w-4/6 bg-slate-200 p-2">
 				<PreviousButton url={"/"} />
 				<section>
 					<h1>Create a new Ticket</h1>
