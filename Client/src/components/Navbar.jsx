@@ -1,28 +1,57 @@
-import React from "react";
-import { FaSignInAlt, FaSignOutAlt, FaUser } from "react-icons/fa";
+import React, { useState } from "react";
+import {
+	FaSignInAlt,
+	FaSignOutAlt,
+	FaUser,
+	FaBars,
+	FaTimes,
+} from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { logoutUser } from "../features/auth/authSlice";
 import { useSelector, useDispatch } from "react-redux";
+import { NavBarBtn } from "./NavBarBtn";
 
 export const Navbar = () => {
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
 	const { user } = useSelector((state) => state.auth);
-
+	const [open, setOpen] = useState(false);
 	const logout = () => {
 		dispatch(logoutUser());
 		navigate("/");
 	};
 
 	return (
-		<div className=" z-10 w-full h-full ">
-			<nav className="absolute left-0 top-0 h-20 flex flex-row justify-between px-20 py-5 bg-slate-200 w-full max-w-screen-2xl">
+		<div className=" w-full h-full ">
+			<nav className="absolute left-0 top-0 h-30 md:h-20 flex flex-row justify-between px-20 py-5 bg-slate-200 w-full max-w-screen-2xl">
 				<h1 className=" text-xl lg:text-2xl text-slate-800">
 					<Link to="/">Ticket System</Link>
 				</h1>
-				<ul className="flex flex-row gap-8">
+				<div onClick={() => setOpen(!open)}>
+					{open ? (
+						<FaTimes
+							size={20}
+							className="absolute my-2 right-8 text-slate-800 md:hidden"
+						/>
+					) : (
+						<FaBars
+							size={20}
+							className="absolute my-2 right-8 text-slate-800 md:hidden"
+						/>
+					)}
+
+					{/* <FaBars
+						size={20}
+						className="absolute my-2 right-8 text-slate-800 md:hidden"
+					/> */}
+				</div>
+				<ul
+					className={`flex flex-col absolute bg-slate-200 w-full md:w-auto left-0 pl-20 pb-4 text-left md:z-20  md:static mt-10 md:mt-0 md:flex-row gap-8 
+          transition-all duration-400 ease-in 
+          ${open ? "opacity-100" : "top-[-490px]"}`}
+				>
 					{user ? (
-						<ul className="flex flex-row gap-8">
+						<>
 							<li>
 								{" "}
 								<h3 className=" text-xl lg:text-2xl text-slate-800">
@@ -37,7 +66,7 @@ export const Navbar = () => {
 									</h3>
 								</button>
 							</li>
-						</ul>
+						</>
 					) : (
 						<>
 							{" "}
@@ -57,6 +86,7 @@ export const Navbar = () => {
 							</li>
 						</>
 					)}
+					{/* <NavBarBtn></NavBarBtn> */}
 				</ul>
 			</nav>
 		</div>
